@@ -1,4 +1,4 @@
-describe('dom.isOffscreen', function() {
+describe.only('dom.isOffscreen', function() {
 	'use strict';
 	var fixture = document.getElementById('fixture');
 	var shadowSupport = axe.testUtils.shadowSupport;
@@ -103,7 +103,7 @@ describe('dom.isOffscreen', function() {
 		assert.isFalse(axe.commons.dom.isOffscreen(el));
 	});
 
-	it('should detect elements positioned outside the right edge on RTL documents', function() {
+	it.only('should detect elements positioned outside the right edge on RTL documents', function() {
 		document.body.style.direction = 'rtl';
 		fixture.innerHTML =
 			'<div id="target" style="position: absolute; width: 50px; right: -151px;">Offscreen?</div>';

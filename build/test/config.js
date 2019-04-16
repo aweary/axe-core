@@ -18,15 +18,15 @@ exports = module.exports = function(grunt, options) {
 				logErrors: true,
 				log: true,
 				urls: [
-					'http://' + host + ':<%= connect.test.options.port %>/test/core/',
-					'http://' + host + ':<%= connect.test.options.port %>/test/checks/',
-					'http://' +
-						host +
-						':<%= connect.test.options.port %>/test/rule-matches/',
-					'http://' + host + ':<%= connect.test.options.port %>/test/commons/',
-					'http://' +
-						host +
-						':<%= connect.test.options.port %>/test/integration/rules/'
+					// 'http://' + host + ':<%= connect.test.options.port %>/test/core/',
+					// 'http://' + host + ':<%= connect.test.options.port %>/test/checks/',
+					// 'http://' +
+					// 	host +
+					// 	':<%= connect.test.options.port %>/test/rule-matches/',
+					'http://' + host + ':<%= connect.test.options.port %>/test/commons/'
+					// 'http://' +
+					// 	host +
+					// 	':<%= connect.test.options.port %>/test/integration/rules/'
 				],
 				run: true,
 				growlOnSuccess: false,
@@ -40,8 +40,8 @@ exports = module.exports = function(grunt, options) {
 				log: true,
 				urls: mapToUrl(
 					[
-						'test/integration/full/**/*.html',
-						'!test/integration/full/**/frames/**/*.html'
+						'test/integration/full/async/*.html',
+						'!test/integration/full/async/frames/**/*.html'
 					].concat([
 						// These tests can be flaky on AppVeyor in Chrome and frequently fail
 						process.env.APPVEYOR
