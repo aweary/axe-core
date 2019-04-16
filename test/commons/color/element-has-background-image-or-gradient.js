@@ -1,4 +1,4 @@
-describe('color.elementHasBackgroundImageOrGradient', function() {
+describe.only('color.elementHasBackgroundImageOrGradient', function() {
 	'use strict';
 
 	var fixture = document.getElementById('fixture');
