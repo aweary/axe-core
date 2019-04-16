@@ -13,25 +13,25 @@ describe.only('color.elementHasBackgroundImageOrGradient', function() {
 		axe.commons.color.incompleteData = origColorIncompleteData;
 	});
 
-	it('returns true when `HTMLElement` is of graphical type', function() {
-		['img', 'canvas', 'object', 'iframe', 'video', 'svg'].forEach(function(
-			nodeName
-		) {
-			var vNode = queryFixture(
-				'<' + nodeName + ' id="target"></' + nodeName + '>'
-			);
-			var actual = elementHasBackgroundImageOrGradient(vNode.actualNode);
-			assert.isTrue(actual);
-		});
-	});
-
-	// it('returns false when `HTMLElement` has no background-image style set', function() {
-	// 	var vNode = queryFixture(
-	// 		'<div id="target" style="height: 40px; width: 30px;">No background style</div>'
-	// 	);
-	// 	var actual = elementHasBackgroundImageOrGradient(vNode.actualNode);
-	// 	assert.isFalse(actual);
+	// it('returns true when `HTMLElement` is of graphical type', function() {
+	// 	['img', 'canvas', 'object', 'iframe', 'video', 'svg'].forEach(function(
+	// 		nodeName
+	// 	) {
+	// 		var vNode = queryFixture(
+	// 			'<' + nodeName + ' id="target"></' + nodeName + '>'
+	// 		);
+	// 		var actual = elementHasBackgroundImageOrGradient(vNode.actualNode);
+	// 		assert.isTrue(actual);
+	// 	});
 	// });
+
+	it('returns false when `HTMLElement` has no background-image style set', function() {
+		var vNode = queryFixture(
+			'<div id="target" style="height: 40px; width: 30px;">No background style</div>'
+		);
+		var actual = elementHasBackgroundImageOrGradient(vNode.actualNode);
+		assert.isFalse(actual);
+	});
 
 	// it('returns false when `HTMLElement` has background-image style set to none', function() {
 	// 	var vNode = queryFixture(
