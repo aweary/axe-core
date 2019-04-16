@@ -27,7 +27,7 @@ describe.only('color.elementHasBackgroundImageOrGradient', function() {
 
 	it('returns false when `HTMLElement` has no background-image style set', function() {
 		var vNode = queryFixture(
-			'<div id="target" style="height: 40px; width: 30px;">No background style</div>'
+			'<div id="target" style="position:absolute; height: 40px; width: 30px;">No background style</div>'
 		);
 		var actual = elementHasBackgroundImageOrGradient(vNode.actualNode);
 		assert.isFalse(actual);
