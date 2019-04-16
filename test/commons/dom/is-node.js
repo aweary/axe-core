@@ -1,4 +1,4 @@
-describe('dom.isNode', function() {
+describe.only('dom.isNode', function() {
 	'use strict';
 
 	it('nodes', function() {
