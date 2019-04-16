@@ -25,39 +25,39 @@ describe.only('color.elementHasBackgroundImageOrGradient', function() {
 		});
 	});
 
-	it('returns false when `HTMLElement` has no background-image style set', function() {
-		var vNode = queryFixture(
-			'<div id="target" style="height: 40px; width: 30px;">No background style</div>'
-		);
-		var actual = elementHasBackgroundImageOrGradient(vNode.actualNode);
-		assert.isFalse(actual);
-	});
+	// it('returns false when `HTMLElement` has no background-image style set', function() {
+	// 	var vNode = queryFixture(
+	// 		'<div id="target" style="height: 40px; width: 30px;">No background style</div>'
+	// 	);
+	// 	var actual = elementHasBackgroundImageOrGradient(vNode.actualNode);
+	// 	assert.isFalse(actual);
+	// });
 
-	it('returns false when `HTMLElement` has background-image style set to none', function() {
-		var vNode = queryFixture(
-			'<div id="target" style="height: 40px; width: 30px; background-image: none "> Some text... </div>'
-		);
-		var actual = elementHasBackgroundImageOrGradient(vNode.actualNode);
-		assert.isFalse(actual);
-	});
+	// it('returns false when `HTMLElement` has background-image style set to none', function() {
+	// 	var vNode = queryFixture(
+	// 		'<div id="target" style="height: 40px; width: 30px; background-image: none "> Some text... </div>'
+	// 	);
+	// 	var actual = elementHasBackgroundImageOrGradient(vNode.actualNode);
+	// 	assert.isFalse(actual);
+	// });
 
-	it('returns true when `HTMLElement` has background-image (url)', function() {
-		var vNode = queryFixture(
-			'<div id="target" style="height: 40px; width: 30px; background-image: url(london.png)"> Some text... </div>'
-		);
-		var actual = elementHasBackgroundImageOrGradient(vNode.actualNode);
-		assert.isTrue(actual);
-		assert.equal(axe.commons.color.incompleteData.get('bgColor'), 'bgImage');
-	});
+	// it('returns true when `HTMLElement` has background-image (url)', function() {
+	// 	var vNode = queryFixture(
+	// 		'<div id="target" style="height: 40px; width: 30px; background-image: url(london.png)"> Some text... </div>'
+	// 	);
+	// 	var actual = elementHasBackgroundImageOrGradient(vNode.actualNode);
+	// 	assert.isTrue(actual);
+	// 	assert.equal(axe.commons.color.incompleteData.get('bgColor'), 'bgImage');
+	// });
 
-	it('returns true when `HTMLElement` has background-image (gradient)', function() {
-		var vNode = queryFixture(
-			'<div id="target" style="height: 40px; width: 30px; background-image: linear-gradient(red, orange);"> Some text... </div>'
-		);
-		var actual = elementHasBackgroundImageOrGradient(vNode.actualNode);
-		assert.isTrue(actual);
-		assert.equal(axe.commons.color.incompleteData.get('bgColor'), 'bgGradient');
-	});
+	// it('returns true when `HTMLElement` has background-image (gradient)', function() {
+	// 	var vNode = queryFixture(
+	// 		'<div id="target" style="height: 40px; width: 30px; background-image: linear-gradient(red, orange);"> Some text... </div>'
+	// 	);
+	// 	var actual = elementHasBackgroundImageOrGradient(vNode.actualNode);
+	// 	assert.isTrue(actual);
+	// 	assert.equal(axe.commons.color.incompleteData.get('bgColor'), 'bgGradient');
+	// });
 
 	// it('returns true when `HTMLElement` has background-image (gradient) and ensure incompleteData setter is invoked', function() {
 	// 	var incompleteDataCalled = false;
