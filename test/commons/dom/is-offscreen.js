@@ -103,7 +103,7 @@ describe.only('dom.isOffscreen', function() {
 		assert.isFalse(axe.commons.dom.isOffscreen(el));
 	});
 
-	it.only('should detect elements positioned outside the right edge on RTL documents', function() {
+	it('should detect elements positioned outside the right edge on RTL documents', function() {
 		document.body.style.direction = 'rtl';
 		fixture.innerHTML =
 			'<div id="target" style="position: absolute; width: 50px; right: -151px;">Offscreen?</div>';
